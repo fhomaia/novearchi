@@ -24,7 +24,7 @@ body, html {
 }
 
 
-.slide {
+.slide-out {
   transform: translateX(-100%);
   opacity: 0;
 }
@@ -65,6 +65,7 @@ body {
 .slide-menu {
   top: 12.6%;
 }
+
 
 header.header h1.title {
   font-size: 25px;
