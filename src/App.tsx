@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './App.css';
 import noveLogo from './assets/logo_9arq_vert_rgb_laranja_pos_final_pc 1.svg'
 import Menu from './components/Menu';
@@ -6,6 +6,8 @@ import Carousel from './components/Carrossel';
 import CarouselMobile from './components/CarrousselMobile';
 
 const App: React.FC = () => {
+
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const imagens = [
     [{ src: "src/assets/1.jpg", color: "#cfc7c7" }, { src: "src/assets/Post6.jpg", color: "#d5a567" }],
@@ -20,6 +22,7 @@ const App: React.FC = () => {
   const [indiceAtual, setIndiceAtual] = useState(0);
   const [stopTrigger, setStopTrigger] = useState<boolean>(false);
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [sliderValue, setSliderValue] = useState<number>(50);
   
 
   const proximo = () => {
@@ -37,14 +40,24 @@ const App: React.FC = () => {
     });
   };
 
+  const iniciarIntervalo = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       proximo();
     }, 3000);
+  };
 
-    return () => clearInterval(intervalId); // Limpar o intervalo ao desmontar
-  }, [3000]);
+  useEffect(() => {
+    iniciarIntervalo();
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -69,6 +82,10 @@ const App: React.FC = () => {
     setShowMenu(prevState => !prevState);
   };
 
+  const moveDivisor = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSliderValue(Number(event.target.value));
+  };
+
   return (
     <>
       <header className="header naked d-flex justify-content-between w-100 p-4 align-items-end">
@@ -90,6 +107,20 @@ const App: React.FC = () => {
         <Menu classStyle={'d-flex gap-4 flex-column'} />
       </div>
       <main style={{ height: '100vh', width: '100vw' }} className='d-none d-md-flex overflow-hidden position-relative' >
+        <div className='position-absolute text-white d-flex justify-content-between col-4 fs-2' style={{zIndex: 3, left: '20%', bottom: '20%', fontStyle: 'italic'}}>
+          <div className='col-3' onClick={() => {setIndiceAtual(0); iniciarIntervalo()}}>
+            <span>1</span>
+            <div className={indiceAtual == 0? 'bg-white mw-100 col-6' : 'bg-transparent col-1'} style={{height: '2px' , transition: 'width 3s ease-out'}}></div>
+          </div>
+          <div className='col-3' onClick={() => {setIndiceAtual(1); iniciarIntervalo()}}>
+            <span>2</span>
+            <div className={indiceAtual == 1? 'bg-white mw-100 col-6' : 'bg-transparent col-1'} style={{height: '2px' , transition: 'width 3s ease-out'}}></div>
+          </div>
+          <div className='col-3' onClick={() => {setIndiceAtual(2); iniciarIntervalo()}}>
+            <span>3</span>
+            <div className={indiceAtual == 2? 'bg-white mw-100 col-6' : 'bg-transparent col-1'} style={{height: '2px' , transition: 'width 3s ease-out'}}></div>
+          </div>
+        </div>
         {imagens.map((imagem, index) => (
             <Carousel key={index} imagem={imagem} index={index} indiceAtual={indiceAtual} stopTrigger={stopTrigger} endIndex={imagens.length} />
         ))}
@@ -99,6 +130,20 @@ const App: React.FC = () => {
           <CarouselMobile key={index} imagem={imagem} index={index} indiceAtual={indiceAtual} stopTrigger={stopTrigger} endIndex={imagens.length} />
         ))}
       </main>
+      <div className="w-100" style={{height: '20vh'}}></div>
+      <div className='d-flex flex-column flex-md-row w-100'>
+        <div className='col-6 p-4 d-flex align-items-center justify-content-center dotted-background'>
+          <div className='col-6'>
+            <h3 className='text-white text-center'>Utilizamos as melhores tecnologias para criar imagens realistas, garantindo que você tenha total confiança em suas escolhas para o projeto.</h3>
+          </div>
+        </div>
+        <div id="comparison">
+          <figure>
+            <div id="divisor" style={{ width: `${sliderValue}%`}}></div>
+          </figure>
+          <input type="range" min="0" max="100" value={sliderValue} id="slider" onChange={moveDivisor}/>
+        </div>
+      </div>
     </>
   )
 }
