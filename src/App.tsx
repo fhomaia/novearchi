@@ -11,14 +11,14 @@ const App: React.FC = () => {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const imagens = [
-    [{ src: "src/assets/1.jpg", color: "#cfc7c7" }, { src: "src/assets/Post6.jpg", color: "#d5a567" }],
-    [{ src: "src/assets/kitchen.jpg", color: "#cfc7c7" }, { src: "src/assets/LPInsta6.jpg", color: "#b37745" }],
-    [{ src: "src/assets/1.jpg", color: "#cfc7c7" }, { src: "src/assets/Post6.jpg", color: "#d5a567" }]
+    [{ src: "src/assets/sala.jpg", color: "#cfc7c7" }, { src: "src/assets/outside.jpg", color: "#d5a567" }],
+    [{ src: "src/assets/kitchen.jpg", color: "#cfc7c7" }, { src: "src/assets/livingRoom.jpg", color: "#b37745" }],
+    [{ src: "src/assets/sala.jpg", color: "#cfc7c7" }, { src: "src/assets/outside.jpg", color: "#d5a567" }]
   ]
   const imagensMobile = [
-    { src: "src/assets/1.jpg", color: "#cfc7c7" }, { src: "src/assets/Post6.jpg", color: "#d5a567" },
-    { src: "src/assets/kitchen.jpg", color: "#cfc7c7" }, { src: "src/assets/LPInsta6.jpg", color: "#b37745" },
-    { src: "src/assets/1.jpg", color: "#cfc7c7" }, { src: "src/assets/Post6.jpg", color: "#d5a567" }
+    { src: "src/assets/sala.jpg", color: "#cfc7c7" }, { src: "src/assets/outside.jpg", color: "#d5a567" },
+    { src: "src/assets/kitchen.jpg", color: "#cfc7c7" }, { src: "src/assets/livingRoom.jpg", color: "#b37745" },
+    { src: "src/assets/sala.jpg", color: "#cfc7c7" }, { src: "src/assets/outside.jpg", color: "#d5a567" }
   ]
   const [indiceAtual, setIndiceAtual] = useState(0);
   const [indiceAtualMobile, setIndiceAtualMobile] = useState(0);
