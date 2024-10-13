@@ -5,20 +5,24 @@ import Menu from './components/Menu';
 import Carousel from './components/Carrossel';
 import CarouselMobile from './components/CarrousselMobile';
 import { useSwipeable } from 'react-swipeable';
+import kitchen from './assets/kitchen.jpg'
+import sala from './assets/sala.jpg'
+import outside from './assets/outside.jpg'
+import livingRoom from './assets/livingRoom.jpg'
 
 const App: React.FC = () => {
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const imagens = [
-    [{ src: "src/assets/sala.jpg", color: "#cfc7c7" }, { src: "src/assets/outside.jpg", color: "#d5a567" }],
-    [{ src: "src/assets/kitchen.jpg", color: "#cfc7c7" }, { src: "src/assets/livingRoom.jpg", color: "#b37745" }],
-    [{ src: "src/assets/sala.jpg", color: "#cfc7c7" }, { src: "src/assets/outside.jpg", color: "#d5a567" }]
+    [{ src: sala, color: "#cfc7c7" }, { src: outside, color: "#d5a567" }],
+    [{ src: kitchen, color: "#cfc7c7" }, { src: livingRoom, color: "#b37745" }],
+    [{ src: sala, color: "#cfc7c7" }, { src: outside, color: "#d5a567" }]
   ]
   const imagensMobile = [
-    { src: "src/assets/sala.jpg", color: "#cfc7c7" }, { src: "src/assets/outside.jpg", color: "#d5a567" },
-    { src: "src/assets/kitchen.jpg", color: "#cfc7c7" }, { src: "src/assets/livingRoom.jpg", color: "#b37745" },
-    { src: "src/assets/sala.jpg", color: "#cfc7c7" }, { src: "src/assets/outside.jpg", color: "#d5a567" }
+    { src: sala, color: "#cfc7c7" }, { src: outside, color: "#d5a567" },
+    { src: kitchen, color: "#cfc7c7" }, { src: livingRoom, color: "#b37745" },
+    { src: sala, color: "#cfc7c7" }, { src: outside, color: "#d5a567" }
   ]
   const [indiceAtual, setIndiceAtual] = useState(0);
   const [indiceAtualMobile, setIndiceAtualMobile] = useState(0);
@@ -29,13 +33,11 @@ const App: React.FC = () => {
   const proximo = () => {
     setIndiceAtual((prev) => {
       const novoIndice = prev === imagens.length - 1 ? 0 : prev + 1;
-      console.log(stopTrigger)
       return novoIndice;
     });
 
     setIndiceAtualMobile((prev) => {
       const novoIndice = prev === imagensMobile.length - 1 ? 0 : prev + 1;
-      console.log(stopTrigger)
       return novoIndice;
     });
   };
@@ -75,7 +77,6 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log(stopTrigger)
       setStopTrigger(true);
     }, 1000);
     return () => clearTimeout(timer);
