@@ -97,7 +97,6 @@ header.header h1.title {
 }
 
 div#comparison { 
-  width: 60vw;
   height: 60vw;
   max-height: 600px;
   overflow: hidden; }
