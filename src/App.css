@@ -15,16 +15,20 @@ body, html {
   padding: 0;
   width: 100vw;
   overflow-x: hidden;
+  background-image: url(https://themes.muffingroup.com/be/architect5/wp-content/uploads/2019/07/architect-body-bg.png);
+  background-repeat: repeat;
+  background-position: center top;
+  background-color: #f8f8f8;
 }
 
 .box {
   transition: transform 2.5s ease, opacity 3s ease;
-  transform: translateX(0);
-  opacity: 1;
+  transform: translateX(0%);
+  opacity: 0.8;
 }
 
 
-.slide {
+.slide-out {
   transform: translateX(-100%);
   opacity: 0;
 }
@@ -50,12 +54,12 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-  z-index: 3;
+  z-index: 999999;
 	color: snow;
 }
 
 .menu {
-  z-index: 2;
+  z-index: 3;
   background-color: rgb(43, 43, 43);
   top: -100vh;
   transition: top 1s ease;
@@ -65,6 +69,7 @@ body {
 .slide-menu {
   top: 12.6%;
 }
+
 
 header.header h1.title {
   font-size: 25px;
@@ -90,3 +95,87 @@ header.header h1.title {
     font-size: 12px;
   }
 }
+
+div#comparison { 
+  width: 60vw;
+  height: 60vw;
+  max-height: 600px;
+  overflow: hidden; }
+div#comparison figure { 
+  background-image: url("./assets/medReviewReal.JPG"); 
+  background-size: cover;
+  position: relative;
+  font-size: 0;
+  width: 100%; 
+  height: 100%;
+  margin: 0; 
+}
+div#comparison figure > img { 
+  position: relative;
+  width: 100%;
+}
+div#comparison figure div { 
+  background-image: url("./assets/medReviewRender.jpg");
+  background-size: cover;
+  position: absolute;
+  width: 50%; 
+  box-shadow: 0 5px 10px -2px rgba(0,0,0,0.3);
+  overflow: hidden;
+  bottom: 0;
+  height: 100%;
+}
+
+input[type=range]{
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  position: relative;
+  top: -2rem; left: -2%;
+  background-color: rgba(255,255,255,0.1);
+  width: 102%; 
+}
+input[type=range]:focus { 
+  outline: none; 
+}
+input[type=range]:active { 
+  outline: none;  
+}
+
+input[type=range]::-moz-range-track { 
+  -moz-appearance:none;
+    height:15px;
+    width: 98%;
+    background-color: rgba(255,255,255,0.1); 
+    position: relative;
+    outline: none;    
+ }
+input[type=range]::active { 
+  border: none; 
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance:none;
+    width: 20px; height: 15px;   
+    background: #fff;
+    border-radius: 0;
+   }
+input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
+  width: 20px;
+  height: 15px;
+  background: #fff;
+  border-radius: 0;
+     }   
+input[type=range]:focus::-webkit-slider-thumb {
+    background: rgba(255,255,255,0.5);
+   }
+input[type=range]:focus::-moz-range-thumb {
+    background: rgba(255,255,255,0.5);
+   }
+
+   .dotted-background {
+    background-color: rgb(105, 104, 102);
+    background-image: url("https://themes.muffingroup.com/be/architect5/wp-content/uploads/2019/07/architect-home-section-pattern-light.png");
+    background-repeat: repeat;
+    background-position: left top;
+    height: 601px;
+   }
