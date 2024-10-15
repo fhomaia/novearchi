@@ -175,20 +175,20 @@ const App: React.FC = () => {
       animate={isVisible ? { y: 0 } : { y: 200 }}
       transition={{ duration: 0.8 }}
       >
-        <div className="w-100 d-none d-md-flex align-items-center justify-content-center" style={{height: '20vh'}}>
-          <h2>Nossos Diferenciais</h2>
+        <div className="w-100 d-none  text-white d-md-flex align-items-center justify-content-center dotted-background fw-bold" style={{height: '20vh'}}>
+          <h5>SOLUÇÕES <span>REAIS, FUNCIONAIS E HARMONIOSAS</span> PARA SEU ESPAÇO</h5>
         </div>
-        <div className='d-flex flex-column flex-md-row w-100'>
-          <div className='col-12 col-md-6 p-4 d-flex align-items-center justify-content-center dotted-background'>
-            <div className='col-12 col-md-6'>
-              <h3 className='text-white text-center'>Utilizamos as melhores tecnologias para criar imagens realistas, garantindo que você tenha total confiança em suas escolhas para o projeto.</h3>
-            </div>
-          </div>
-          <div id="comparison" className="col-12 col-md-6">
+        <div className='d-flex flex-column w-100 align-items-center p-4 dotted-background'>
+          <div id="comparison" className="col-10">
             <figure>
               <div id="divisor" style={{ width: `${sliderValue}%`}}></div>
             </figure>
             <input type="range" min="0" max="100" value={sliderValue} id="slider" onChange={moveDivisor}/>
+          </div>
+          <div className='col-10 d-flex align-items-center justify-content-center'>
+            <div className='col-12 pt-3 text-white text-center'>
+              <h5>Usamos tecnologia de ponta para produzir imagens realistas que se traduzem em mais confiança nas suas escolhas de projeto.</h5>
+            </div>
           </div>
         </div>
       </motion.div>
