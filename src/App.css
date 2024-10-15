@@ -45,6 +45,7 @@ body, html {
 
 body {
   font-family: 'Brandon-light', 'Poppins', sans-serif;
+  overflow: hidden;
 }
 
 .header {
@@ -56,6 +57,7 @@ body {
 	left: 0;
   z-index: 999999;
 	color: snow;
+  width: 100vw;
 }
 
 .menu {
@@ -97,7 +99,7 @@ header.header h1.title {
 }
 
 div#comparison { 
-  height: 60vw;
+  height: 650px;
   max-height: 600px;
   overflow: hidden; }
 div#comparison figure { 

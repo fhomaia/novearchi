@@ -9,10 +9,40 @@ import kitchen from './assets/kitchen.jpg'
 import sala from './assets/sala.jpg'
 import outside from './assets/outside.jpg'
 import livingRoom from './assets/livingRoom.jpg'
+import { motion } from "framer-motion";
 
 const App: React.FC = () => {
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false); // Reseta a animação quando o elemento sai da tela
+          }
+        });
+      },
+      { threshold: 0.1 } // Ajusta o threshold para determinar quando o elemento deve aparecer
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
 
   const imagens = [
     [{ src: sala, color: "#cfc7c7" }, { src: outside, color: "#d5a567" }],
@@ -103,7 +133,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <header className="header naked d-flex justify-content-between w-100 p-4 align-items-end">
+      <header className="header naked d-flex justify-content-between 100-vw p-4 align-items-end">
         <div className="d-flex align-items-end">
           <img src={noveLogo} width='50' />
           <h1 className="px-4 mb-0 title"><span className="fw-bold">NOVE</span><br /><span>ARQUITETURA</span></h1>
@@ -134,25 +164,34 @@ const App: React.FC = () => {
             <Carousel key={index} imagem={imagem} index={index} indiceAtual={indiceAtual} stopTrigger={stopTrigger} endIndex={imagens.length} />
         ))}
       </main>
-      <main {...swipeHandlers} style={{ height: '100vh', width: '100vw' }} className='d-flex d-md-none overflow-hidden position-relative' onScroll={proximo} >
+      <main {...swipeHandlers} style={{ height: '100vh', width: '100vw', minHeight: '665px' }} className='d-flex d-md-none overflow-hidden position-relative' onScroll={proximo} >
         {imagensMobile.map((imagem, index) => (
           <CarouselMobile key={index} imagem={imagem} index={index} indiceAtual={indiceAtualMobile} stopTrigger={stopTrigger} endIndex={imagens.length} />
         ))}
       </main>
-      <div className="w-100 d-none d-md-block" style={{height: '20vh'}}></div>
-      <div className='d-flex flex-column flex-md-row w-100'>
-        <div className='col-12 col-md-6 p-4 d-flex align-items-center justify-content-center dotted-background'>
-          <div className='col-12 col-md-6'>
-            <h3 className='text-white text-center'>Utilizamos as melhores tecnologias para criar imagens realistas, garantindo que você tenha total confiança em suas escolhas para o projeto.</h3>
+      <motion.div
+      ref={ref}
+      initial={{ y: 200 }}
+      animate={isVisible ? { y: 0 } : { y: 200 }}
+      transition={{ duration: 0.8 }}
+      >
+        <div className="w-100 d-none d-md-flex align-items-center justify-content-center" style={{height: '20vh'}}>
+          <h2>Nossos Diferenciais</h2>
+        </div>
+        <div className='d-flex flex-column flex-md-row w-100'>
+          <div className='col-12 col-md-6 p-4 d-flex align-items-center justify-content-center dotted-background'>
+            <div className='col-12 col-md-6'>
+              <h3 className='text-white text-center'>Utilizamos as melhores tecnologias para criar imagens realistas, garantindo que você tenha total confiança em suas escolhas para o projeto.</h3>
+            </div>
+          </div>
+          <div id="comparison" className="col-12 col-md-6">
+            <figure>
+              <div id="divisor" style={{ width: `${sliderValue}%`}}></div>
+            </figure>
+            <input type="range" min="0" max="100" value={sliderValue} id="slider" onChange={moveDivisor}/>
           </div>
         </div>
-        <div id="comparison" className="col-12 col-md-6">
-          <figure>
-            <div id="divisor" style={{ width: `${sliderValue}%`}}></div>
-          </figure>
-          <input type="range" min="0" max="100" value={sliderValue} id="slider" onChange={moveDivisor}/>
-        </div>
-      </div>
+      </motion.div>
     </>
   )
 }
