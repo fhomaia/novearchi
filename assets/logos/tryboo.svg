@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 864 864" width="864" height="864" xmlns="http://www.w3.org/2000/svg">
+<path transform="translate(655,356)" d="m0 0h18l14 3 12 5 11 7 10 9 8 10 8 15 4 16v23l-4 15-8 16-12 14-11 8-16 8-11 3-9 1h-10l-17-3-12-5-11-7-10-9-8-9-9-17-4-15v-23l3-13 8-16 8-11 7-7 10-7 14-7 11-3z" fill="gray"/>
+<path transform="translate(246,358)" d="m0 0h34l4 5 13 25 12 22 3 3 12-22 17-32 2-1h33l1 3-15 29-12 22-18 34-14 26-17 32-2 2h-90l-1-1v-98l1-1h40l9 3 8 6 6 7 4 9 1 13-3 10-5 8-9 8-10 4 2 5 12 12 2 3h3l13-25 10-18-1-5-13-25-12-22-17-32-4-8z" fill="gray"/>
+<path transform="translate(390,358)" d="m0 0h16l10 3 9 6 7 9 4 11v14l-4 11-4 8 9 3 11 8 7 10 4 10 1 6v10l-3 12-5 9-8 9-10 6-9 3h-65l-12-22-12-23 1-6 14-27 12-22 17-32 8-14z" fill="gray"/>
+<path transform="translate(518,356)" d="m0 0h11l11 2 16 8 9 8 7 10 4 9 2 7 1 15-2 12-4 11-8 11-10 9-14 7-8 2h-20l-15-5-9-6-8-7-9-14-4-12v-22l4-12 6-11 11-11 12-7 9-3z" fill="gray"/>
+<path transform="translate(126,358)" d="m0 0h109l1 1v35l-1 1-36 1-1 110h-37l-1-2v-108l-35-1-1-1v-35z" fill="gray"/>
+<path transform="translate(468,497)" d="m0 0h110l1 1v8h-111l-1-1v-7z" fill="gray"/>
+<path transform="translate(468,478)" d="m0 0h111v8l-1 1h-110l-1-1v-7z" fill="gray"/>
+</svg>
