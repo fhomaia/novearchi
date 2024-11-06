@@ -9,40 +9,19 @@ import kitchen from './assets/kitchen.jpg'
 import sala from './assets/sala.jpg'
 import outside from './assets/outside.jpg'
 import livingRoom from './assets/livingRoom.jpg'
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Partners from './components/Partners';
+import Services from './components/Services';
+import Transform from './components/Transform';
 
 const App: React.FC = () => {
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          } else {
-            setIsVisible(false); // Reseta a animação quando o elemento sai da tela
-          }
-        });
-      },
-      { threshold: 0.1 } // Ajusta o threshold para determinar quando o elemento deve aparecer
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
+  const container = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target:  container,
+    offset: ['start start', 'end end']
+  })
 
   const imagens = [
     [{ src: sala, color: "#cfc7c7" }, { src: outside, color: "#d5a567" }],
@@ -131,6 +110,7 @@ const App: React.FC = () => {
     setSliderValue(Number(event.target.value));
   };
 
+
   return (
     <>
       <header className="header naked d-flex justify-content-between 100-vw p-4 align-items-end">
@@ -145,15 +125,12 @@ const App: React.FC = () => {
         </div>
         <Menu classStyle={'d-lg-flex gap-4 d-none'} />
       </header>
-      {/* <button  className="btn btn-outline-dark" onClick={anterior}>Anterior</button>
-      <button className="btn btn-outline-dark" onClick={proximo}>Próximo</button> */}
-
       <div className={`vh-100 vw-100 menu p-5 position-absolute ${showMenu ? 'slide-menu' : ''}`}>
         <Menu classStyle={'d-flex gap-4 flex-column'} />
       </div>
       <main style={{ height: '100vh', width: '100vw' }} className='d-none d-md-flex overflow-hidden position-relative' >
         <div className='position-absolute d-none text-white d-md-flex justify-content-between col-4 fs-2' style={{zIndex: 3, left: '20%', bottom: '20%', fontStyle: 'italic'}}>
-          {imagens.map((image, index) => (
+          {imagens.map((_image, index) => (
             <div className='col-3' onClick={() => {setIndiceAtual(index); iniciarIntervalo()}}>
             <span>{index +1}</span>
             <div className={indiceAtual == index? 'bg-white mw-100 col-6' : 'bg-transparent col-1'} style={{height: '2px' , transition: 'width 3s ease-out'}}></div>
@@ -169,29 +146,62 @@ const App: React.FC = () => {
           <CarouselMobile key={index} imagem={imagem} index={index} indiceAtual={indiceAtualMobile} stopTrigger={stopTrigger} endIndex={imagens.length} />
         ))}
       </main>
-      <motion.div
-      ref={ref}
-      initial={{ y: 200 }}
-      animate={isVisible ? { y: 0 } : { y: 200 }}
-      transition={{ duration: 0.8 }}
-      >
-        <div className="w-100 d-none  text-white d-md-flex align-items-center justify-content-center dotted-background fw-bold" style={{height: '20vh'}}>
-          <h5>SOLUÇÕES <span>REAIS, FUNCIONAIS E HARMONIOSAS</span> PARA SEU ESPAÇO</h5>
+      <div className='sentence d-flex flex-column flex-lg-row'>
+        <div>Soluções</div> 
+        <div className="middle d-block text-wrap d-lg-none"> 
+          <span>reais, funcionais e harmoniosas</span>
         </div>
-        <div className='d-flex flex-column w-100 align-items-center p-4 dotted-background'>
-          <div id="comparison" className="col-10">
-            <figure>
-              <div id="divisor" style={{ width: `${sliderValue}%`}}></div>
-            </figure>
-            <input type="range" min="0" max="100" value={sliderValue} id="slider" onChange={moveDivisor}/>
-          </div>
-          <div className='col-10 d-flex align-items-center justify-content-center'>
-            <div className='col-12 pt-3 text-white text-center'>
-              <h5>Usamos tecnologia de ponta para produzir imagens realistas que se traduzem em mais confiança nas suas escolhas de projeto.</h5>
+        <div className="middle d-none d-lg-block"> 
+          <span>reais, funcionais e harmoniosas</span>
+        </div>
+        <div>para seu espaço</div>
+      </div>
+      <div className="d-flex flex-column gap-4 position-relative" style={{gap: '3.5rem'}}>
+        <motion.div
+        initial={{ y: 200}}
+        whileInView={{y: 0}}
+        transition={{ duration: 0.8 }}
+        viewport={{ once:  true }}
+        >
+          <div className='d-flex w-100 align-items-center text-center'>
+            <div className='col-12 col-lg-8' style={{backgroundImage: 'url(src/assets/highlightKitchen.png)', backgroundSize: 'cover', height: '33vh', backgroundPosition: 'center'}}>
             </div>
           </div>
+        </motion.div>
+        <motion.div
+        initial={{ y: 200 }}
+        whileInView={{y: 0}}
+        transition={{ duration: 0.8 }}
+        viewport={{ once:  true }}
+        >
+          <div className='d-flex w-100 align-items-center text-center' style={{backgroundColor: 'rgb(43, 43, 43)'}}>
+            <div className='d-flex col-12 d-lg-none align-items-center justify-content-center'>
+              <div className='p-3 fs-2  text-center text-white'>
+              <p>A palavra-chave é transformação.</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+        <motion.div
+        initial={{ y: 200}}
+        whileInView={{y: 0}}
+        transition={{ duration: 0.8 }}
+        viewport={{ once:  true }}
+        >
+          <div className='d-flex w-100 align-items-center text-center' style={{backgroundColor: 'rgb(43, 43, 43)'}}>
+            <div className='d-none col-lg-6 d-lg-flex align-items-center text-white justify-content-center'>
+              <div className='p-3 text-center' style={{fontSize: '32px', fontWeight: '300'}}>
+              <p>A palavra-chave é transformação.</p>
+              </div>
+            </div>
+            <Transform/>
+          </div>
+        </motion.div>
         </div>
-      </motion.div>
+        <Services/>
+        <div className="d-flex" style={{background:'linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%)', height: '30vh'}}>
+          <Partners/>
+        </div>
     </>
   )
 }

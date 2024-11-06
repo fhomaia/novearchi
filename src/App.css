@@ -19,6 +19,7 @@ body, html {
   background-repeat: repeat;
   background-position: center top;
   background-color: #f8f8f8;
+  scroll-behavior: smooth;
 }
 
 .box {
@@ -99,8 +100,8 @@ header.header h1.title {
 }
 
 div#comparison { 
-  height: 650px;
-  max-height: 600px;
+  height: 33vh;
+  max-height: 400px;
   overflow: hidden; }
 div#comparison figure { 
   background-image: url("./assets/medReviewReal.JPG"); 
@@ -179,3 +180,95 @@ input[type=range]:focus::-moz-range-thumb {
     background-repeat: repeat;
     background-position: left top;
    }
+
+   .sentence {
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight:300;
+    font-size:32px;
+    height:30vh;
+    overflow:hidden;
+  }
+
+   .sentence div {
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+
+   .sentence div:first-of-type {   
+    animation: showup 7s infinite;
+}
+
+.sentence div:last-of-type {    
+    animation: showup 7s infinite;
+    margin-left: 0.5rem
+}
+
+.middle {
+  width:0px;
+  animation: reveal 7s infinite;
+  margin-left: 0.5rem;
+}
+
+#beforeAndAfter {
+  background-image: url(./assets/medReviewRender.jpg);
+  background-size: cover;
+  background-position: center;
+  animation: change 10s infinite ease-in-out;
+  height: 33vh;
+  max-height: 400px;
+}
+
+@keyframes showup {
+  0% {opacity:0;}
+  20% {opacity:1;}
+  80% {opacity:1;}
+  100% {opacity:0;}
+}
+
+
+@keyframes reveal {
+0% {opacity:0;width:0px;}
+20% {opacity:1;width:0px;}
+30% {width:500px;}
+80% {opacity:1;}
+100% {opacity:0;width:500px;}
+}
+
+@keyframes change{
+  25%
+  {
+      background-image: url(./assets/medReviewReal.JPG);
+  }
+  50%
+  {
+      background-image: url(./assets/medReviewRender.jpg);
+  }
+  100%
+  {
+      background-image: url(./assets/medReviewReal.JPG);
+  }
+}
+
+.flicker-animation{
+  color: orange;
+}
+ 
+@keyframes flicker {
+  0% {
+    color: white;
+    text-shadow: 0 0 10px white;
+  }
+  50% {
+    color: orange;
+    text-shadow: 0 0 10px orange;
+  }
+  100% {
+    color: white;
+    text-shadow: 0 0 10px white;
+  }
+}
+
