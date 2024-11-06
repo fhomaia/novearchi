@@ -42,7 +42,7 @@ const Partners: React.FC = () => {
 
 
   return (
-    <>
+    <div className="d-flex" style={{background:'linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%)', height: '30vh'}}>
       <motion.div ref={ref} className='d-flex vw-100 align-items-center p-4 justify-content-between' style={{x: xTranslation}}>
         {
             [...logos, ...logos].map((logo) => {
@@ -56,7 +56,7 @@ const Partners: React.FC = () => {
             })
         }
         </motion.div>
-    </>
+    </div>
   )
 }
 
