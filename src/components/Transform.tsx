@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import medReviewRender from '../assets/medReviewRender.jpg';
+import medReviweReal from '../assets/medReviewReal.jpg';
+
 
 const Transform: React.FC = () => {
   const [showChild, setShowChild] = useState<boolean>(true);
@@ -22,7 +25,7 @@ const Transform: React.FC = () => {
           height: '33vh',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundImage: 'url(src/assets/medReviewReal.JPG)',
+          backgroundImage: `url(${medReviewRender})`,
         }}
       >
       </motion.div>
@@ -35,7 +38,7 @@ const Transform: React.FC = () => {
           height: '33vh',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundImage: 'url(src/assets/medReviewRender.jpg)',
+          backgroundImage: `url(${medReviweReal})`
         }}
       >
       </motion.div>

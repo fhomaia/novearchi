@@ -1,8 +1,17 @@
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect } from 'react';
 import '../App.css';
 import { animate, motion, useMotionValue } from "framer-motion";
-import useMeasure from 'react-use-measure'
+import useMeasure from 'react-use-measure';
+import csm from '../assets/logos/csm.svg';
+import CEMIG from '../assets/logos/CEMIG.svg';
+import velotime from '../assets/logos/velotime.svg';
+import bmg from '../assets/logos/bmg.svg';
+import plr from '../assets/logos/plr.svg';
+import amcnb from '../assets/logos/amcnb.svg';
+import tryboo from '../assets/logos/tryboo.svg';
+import kakilang from '../assets/logos/kakilang.svg';
+
 
 const Partners: React.FC = () => {
 
@@ -12,14 +21,14 @@ const Partners: React.FC = () => {
     }
 
   const logos:ImageObject[] = [
-    {src: 'src/assets/logos/csm.svg', height: '100'},
-    {src: 'src/assets/logos/CEMIG.svg', height: '50'},
-    {src: 'src/assets/logos/velotime.svg', height: '100'},
-    {src: 'src/assets/logos/bmg.svg', height: '200'},
-    {src: 'src/assets/logos/plr.svg', height: '60'},
-    {src: 'src/assets/logos/amcnb.svg', height: '80'},
-    {src: 'src/assets/logos/tryboo.svg', height: '200'},
-    {src: 'src/assets/logos/kakilang.svg', height: '100'}
+    {src: csm, height: '100'},
+    {src: CEMIG, height: '50'},
+    {src: velotime, height: '100'},
+    {src: bmg, height: '200'},
+    {src: plr, height: '60'},
+    {src: amcnb, height: '80'},
+    {src: tryboo, height: '200'},
+    {src: kakilang, height: '100'}
   ]
 
   let [ref, { width }] = useMeasure();

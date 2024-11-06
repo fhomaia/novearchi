@@ -3,6 +3,7 @@ import React from 'react';
 import '../App.css';
 import {  motion } from "framer-motion";
 import Transform from './Transform';
+import highlightKitchen from '../assets/highlightKitchen.png'
 
 const Highlights: React.FC = () => {
 
@@ -14,7 +15,7 @@ const Highlights: React.FC = () => {
         transition={{ duration: 0.9 }}
         >
           <div className='d-flex w-100 align-items-center text-center'>
-            <div className='col-12 col-lg-8' style={{backgroundImage: 'url(src/assets/highlightKitchen.png)', backgroundSize: 'cover', height: '33vh', backgroundPosition: 'center'}}>
+            <div className='col-12 col-lg-8' style={{backgroundImage: `ùrl(${highlightKitchen})`, backgroundSize: 'cover', height: '33vh', backgroundPosition: 'center'}}>
             </div>
           </div>
         </motion.div>
