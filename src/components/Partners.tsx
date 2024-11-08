@@ -54,9 +54,9 @@ const Partners: React.FC = () => {
     <div className="d-flex" style={{background:'linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%)', height: '30vh'}}>
       <motion.div ref={ref} className='d-flex vw-100 align-items-center p-4 justify-content-between' style={{x: xTranslation}}>
         {
-            [...logos, ...logos].map((logo) => {
+            [...logos, ...logos].map((logo, i) => {
                 return (
-                    <div>
+                    <div key={i}>
                         <div className='border-end p-4 my-auto'> 
                             <img src={logo.src} height={logo.height}/>
                         </div>

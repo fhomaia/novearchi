@@ -6,11 +6,11 @@ interface MenuProps {
 function Menu({ classStyle }: MenuProps) {
     return (
         <div className={classStyle}>
-            <span>HOME</span>
-            <span>PROJETOS</span>
-            <span>CONEXÃO 9</span>
-            <span>SOBRE</span>
-            <span>CONTATOS</span>
+            <a href="#home"  className="text-white" style={{textDecoration: 'none'}}>HOME</a>
+            <a href="#about"  className="text-white" style={{textDecoration: 'none'}}>SOBRE</a>
+            <a href="#projects"  className="text-white" style={{textDecoration: 'none'}}>PROJETOS</a>
+            <a href="#conexao"  className="text-white" style={{textDecoration: 'none'}}>CONEXÃO 9</a>
+            <a href="#contact"  className="text-white" style={{textDecoration: 'none'}}>CONTATOS</a>
         </div>
     )
 }

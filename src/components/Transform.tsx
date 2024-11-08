@@ -5,7 +5,7 @@ import medReviweReal from '../assets/medReviewReal.jpg';
 
 
 const Transform: React.FC = () => {
-  const [showChild, setShowChild] = useState<boolean>(true);
+  const [showChild, setShowChild] = useState<boolean>(false);
   useEffect(() => {
     const interval = setInterval(() => {
       setShowChild((prev) => !prev);

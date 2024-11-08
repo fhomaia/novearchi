@@ -24,9 +24,9 @@ const Headers: React.FC = () => {
             <span className="material-symbols-outlined p-0 m-0">menu</span>
           </button>
         </div>
-        <Menu classStyle={'d-lg-flex gap-4 d-none'} />
+        <Menu classStyle={'d-lg-flex gap-4 d-none cursor-pointer'} />
       </header>
-      <div className={`vh-100 vw-100 menu p-5 position-absolute ${showMenu ? 'slide-menu' : ''}`}>
+      <div className={`vh-100 vw-100 menu p-5 position-absolute cursor-pointer ${showMenu ? 'slide-menu' : ''}`}>
         <Menu classStyle={'d-flex gap-4 flex-column'} />
       </div>
     </>
