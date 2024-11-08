@@ -1,0 +1,35 @@
+#card-container {
+  height: 70vh;
+  cursor: pointer;
+}
+
+
+#card {
+  background-size: cover;
+  background-position: center;
+  transition: all .5s;
+}
+
+#card:hover {
+  box-shadow: inset -7px 77px 70px -11px rgba(0,0,0,0.75);
+  transform: scale(1.1);
+  transition: all .5s;
+}
+
+#card-title {
+  visibility: hidden;
+  height: 0;
+  background-color: rgb(43, 43, 43, 0.7);
+  transition: all .5s;
+}
+
+#card-container:hover #card-title {
+  visibility: visible;
+  height: 15vh;
+  min-height: fit-content;
+}
+
+#card-container:active #card-title {
+  visibility: visible;
+  height: 10vh;
+}
