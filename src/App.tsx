@@ -7,6 +7,7 @@ import Highlights from './components/Highlights';
 import Main from './components/Main';
 import Headers from './components/Header';
 import Projects from './components/Projects';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
 
@@ -18,6 +19,7 @@ const App: React.FC = () => {
       <Projects/>
       <Services/>
       <Partners/>
+      <Footer/>
     </>
   )
 }

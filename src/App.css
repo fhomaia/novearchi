@@ -22,6 +22,7 @@ body, html {
   scroll-behavior: smooth;
 }
 
+
 .box {
   transition: transform 2.5s ease, opacity 3s ease;
   transform: translateX(0%);
@@ -121,6 +122,11 @@ animation: showup 7s infinite;
 
 .flicker-animation{
   color: orange;
+}
+
+footer {
+  background-color: rgb(43, 43, 43);
+  padding: 3rem
 }
 
 @media (prefers-reduced-motion: no-preference) {
