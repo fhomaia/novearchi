@@ -3,8 +3,22 @@ import React, { useState } from 'react';
 import '../App.css';
 import noveLogo from '../assets/logo_9arq_vert_rgb_laranja_pos_final_pc 1.svg';
 import Menu from './Menu';
+import { useInView } from 'react-intersection-observer';
 
-const Headers: React.FC = () => {
+interface HeaderProps {
+  onVisibilityChange: (inView: boolean) => void; // Função para informar a visibilidade
+}
+
+const Headers: React.FC<HeaderProps> = ({ onVisibilityChange }) => {
+
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0,
+  });
+
+  React.useEffect(() => {
+    onVisibilityChange(inView);
+  }, [inView, onVisibilityChange]);
 
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
@@ -14,7 +28,7 @@ const Headers: React.FC = () => {
 
   return (
     <>
-      <header className="header naked d-flex justify-content-between 100-vw p-4 align-items-end">
+      <header ref={ref} className="header naked d-flex justify-content-between 100-vw p-4 align-items-end">
         <div className="d-flex align-items-end">
           <img src={noveLogo} width='50' />
           <h1 className="px-4 mb-0 title"><span className="fw-bold">NOVE</span><br /><span>ARQUITETURA</span></h1>

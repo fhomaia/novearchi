@@ -99,6 +99,10 @@ height:30vh;
 overflow:hidden;
 }
 
+.popover-arrow::after {
+  border-top-color: #212529 !important;
+}
+
 .sentence div {
 display:inline-block;
 overflow:hidden;
