@@ -55,10 +55,10 @@ const Projects: React.FC = () => {
   ]
 
   return (
-    <div className='d-flex flex-wrap vw-100 justify-content-center align-items center mb-4' style={{gap: '3rem'}}>
+    <div className='d-flex flex-wrap vw-100 justify-content-center align-items center mb-4' style={{gap: '3rem'}} id="projects">
       {
         projects.map((project, i) => {
-          return <Card project={project} duration={1 + (projects.length - (i + 1))*0.25} initial={-300 + (projects.length - (i + 1))/(projects.length)*(-300) } key={i}/>
+          return <Card project={project} duration={1 + (projects.length - (i + 1))*0.25} initial={-300 } key={i}/>
         })
       }
     </div>

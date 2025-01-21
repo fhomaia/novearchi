@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, {useState} from 'react';
 import '../App.css';
 import { motion } from "framer-motion";
 
@@ -22,18 +22,34 @@ const Services: React.FC = () => {
     }
   ]
 
+  const [isClicked, setIsClicked] = useState(3);
+
+
+  const handleClick = (target: number) => {
+    if (target == isClicked) {
+      return setIsClicked(3)
+    }
+    setIsClicked(target)
+
+  };
+
+
   return (
     <>
-      <div className='d-flex flex-column flex-lg-row my-4'>
+      <div className='d-flex flex-column flex-lg-row my-4 align-items-center' style={{maxWidth: '100vw'}} id="conexao">
         {
           services.map((service, i)=> {
             return (
               <motion.div 
-                initial={{ scale: 0.7 }}
                 key={i}
-                whileHover={{scale: 1}}
+                onHoverStart={() => setIsClicked(i)}
+                onHoverEnd={() => setIsClicked(3)}
+                onClick={() => handleClick(i)}
                 transition={{ duration: 0.8 }}
-                className="d-flex flex-column justify-content-center gap-3 mx-auto bg-white align-items-center" style={{height: '33vw', marginTop: '4rem', width: '33vw', borderRadius: '50%'}}>
+                animate={{
+                  scale: isClicked == i ? 1 : 0.7
+                }}
+                className="d-flex flex-column justify-content-center gap-3 mx-auto bg-white align-items-center service-circle">
                 <span style={{fontSize: '5rem'}} className="material-symbols-outlined">{service.icon}</span>
                 <div className='text-center'>
                   <h2>{service.title}</h2>
