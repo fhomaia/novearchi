@@ -93,10 +93,10 @@ const Main: React.FC = () => {
 
   return (
     <>
-      <main id="home" style={{ height: '100vh', width: '100vw' }} className='d-none d-md-flex overflow-hidden position-relative' >
+      <main  style={{ height: '100vh', width: '100vw' }} className='d-none d-md-flex overflow-hidden position-relative' >
         <div className='position-absolute d-none text-white d-md-flex justify-content-between col-4 fs-2' style={{zIndex: 3, left: '20%', bottom: '20%', fontStyle: 'italic'}}>
           {imagens.map((_image, index) => (
-            <div className='col-3' onClick={() => {setIndiceAtual(index); iniciarIntervalo()}} key={index}>
+            <div className='col-3' style={{cursor: "pointer"}} onClick={() => {setIndiceAtual(index); iniciarIntervalo()}} key={index}>
             <span>{index +1}</span>
             <div className={indiceAtual == index? 'bg-white mw-100 col-6' : 'bg-transparent col-1'} style={{height: '2px' , transition: 'width 3s ease-out'}}></div>
           </div>
@@ -111,12 +111,9 @@ const Main: React.FC = () => {
           <CarouselMobile key={index} imagem={imagem} index={index} indiceAtual={indiceAtualMobile} stopTrigger={stopTrigger} endIndex={imagens.length} />
         ))}
       </main>
-      <div className='sentence d-flex flex-column flex-lg-row'>
+      <div className='sentence d-flex flex-column align-items-center 100-vw flex-lg-row'>
         <div>Soluções</div> 
-        <div className="middle d-block text-wrap d-lg-none"> 
-          <span>reais, funcionais e harmoniosas</span>
-        </div>
-        <div className="middle d-none d-lg-block"> 
+        <div className="middle d-block"> 
           <span>reais, funcionais e harmoniosas</span>
         </div>
         <div>para seu espaço</div>

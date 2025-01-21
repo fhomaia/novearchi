@@ -21,14 +21,14 @@ const Partners: React.FC = () => {
     }
 
   const logos:ImageObject[] = [
-    {src: csm, height: '100'},
-    {src: CEMIG, height: '50'},
-    {src: velotime, height: '100'},
-    {src: bmg, height: '200'},
-    {src: plr, height: '60'},
-    {src: amcnb, height: '80'},
-    {src: tryboo, height: '200'},
-    {src: kakilang, height: '100'}
+    {src: csm, height: '70'},
+    {src: CEMIG, height: '40'},
+    {src: velotime, height: '70'},
+    {src: bmg, height: '110'},
+    {src: plr, height: '40'},
+    {src: amcnb, height: '50'},
+    {src: tryboo, height: '110'},
+    {src: kakilang, height: '70'}
   ]
 
   let [ref, { width }] = useMeasure();
@@ -51,13 +51,13 @@ const Partners: React.FC = () => {
 
 
   return (
-    <div className="d-flex" style={{background:'linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%)', height: '30vh'}}>
+    <div className="d-flex partners" style={{background:'linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%)', height: '15vh'}}>
       <motion.div ref={ref} className='d-flex vw-100 align-items-center p-4 justify-content-between' style={{x: xTranslation}}>
         {
-            [...logos, ...logos].map((logo, i) => {
+            [...logos, ...logos, ...logos].map((logo, i) => {
                 return (
                     <div key={i}>
-                        <div className='border-end p-4 my-auto'> 
+                        <div className='border-end p-4 my-auto d-flex align-items-center' style={{height: '14vh', boxSizing: 'border-box'}}> 
                             <img src={logo.src} height={logo.height}/>
                         </div>
                     </div>

@@ -33,3 +33,12 @@
   visibility: visible;
   height: 10vh;
 }
+
+
+@media (max-width: 1366px) {
+  #card-title {
+    visibility: visible;
+    height: 15vh;
+    min-height: fit-content;
+  }
+}

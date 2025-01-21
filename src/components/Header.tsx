@@ -28,7 +28,7 @@ const Headers: React.FC<HeaderProps> = ({ onVisibilityChange }) => {
 
   return (
     <>
-      <header ref={ref} className="header naked d-flex justify-content-between 100-vw p-4 align-items-end">
+      <header id="home" ref={ref} className="header naked d-flex justify-content-between 100-vw p-4 align-items-end">
         <div className="d-flex align-items-end">
           <img src={noveLogo} width='50' />
           <h1 className="px-4 mb-0 title"><span className="fw-bold">NOVE</span><br /><span>ARQUITETURA</span></h1>

@@ -38,7 +38,7 @@ const Contact: React.FC<ContactProps> = ({ isHeaderVisible, isFooterVisible }) =
       style={{zIndex: 4}}
     >
       <OverlayTrigger trigger="click" placement="top" overlay={popover}>
-        <div className='d-flex gap-2 align-items-center justify-content-end rounded-circle bg-dark p-4'>
+        <div className='d-flex gap-2 align-items-center justify-content-end rounded-circle' style={{backgroundColor: '#d55700', padding: '0.7rem'}}>
             <img src={whatsapp} width="40"/>
         </div>
       </OverlayTrigger>
