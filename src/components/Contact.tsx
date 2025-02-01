@@ -20,7 +20,7 @@ const Contact: React.FC<ContactProps> = ({ isHeaderVisible, isFooterVisible }) =
       <Popover.Header as="h3" className='text-center text-white bg-dark'>Contatos</Popover.Header>
       <Popover.Body className='bg-dark'>
         <div className='text-white d-flex gap-2 align-items-center justify-content-center'>
-            <a target="_blank" href="https://wa.me/553199790999?text=Olá!%20Gostaria%20de%20tirar%20dúvidas%20sobre%20os%20projetos."><img src={whatsapp} width="40"/></a>
+            <a target="_blank" href="https://wa.me/5531990790999?text=Olá!%20Gostaria%20de%20tirar%20dúvidas%20sobre%20os%20projetos."><img src={whatsapp} width="40"/></a>
             <a href="https://www.instagram.com/9arquitetura/" target="_blank"><img src={instagram} width="40"/></a>
         </div>
       </Popover.Body>

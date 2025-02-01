@@ -34,7 +34,7 @@ const Footer: React.FC<FooterProps> = ({ onVisibilityChange }) => {
               <h1 className="mb-0 fs-6 text-white"><span className="fw-bold">NOVE</span><br /><span>ARQUITETURA</span></h1>
             </a>
             <div className="w-100" style={{fontSize: "12px"}}>
-              <span >Av. Rio Grande do Norte, 726, Funcionários, BH - MG</span>
+              <span >Av. Rio Grande do Norte, 726, Funcionários, sla. 1204 BH - MG</span>
           </div>
           </div>
           <div className='d-flex flex-column gap-2'>

@@ -47,12 +47,12 @@ const Services: React.FC = () => {
                 onClick={() => handleClick(i)}
                 transition={{ duration: 0.8 }}
                 animate={{
-                  scale: isClicked == i ? 1 : 0.7
+                  scale: isClicked == i ? 1 : 0.9
                 }}
                 className="d-flex flex-column justify-content-center gap-3 mx-auto bg-white align-items-center service-circle">
-                <span style={{fontSize: '5rem'}} className="material-symbols-outlined">{service.icon}</span>
+                <span style={{fontSize: '3rem'}} className="material-symbols-outlined">{service.icon}</span>
                 <div className='text-center'>
-                  <h2>{service.title}</h2>
+                  <h3>{service.title}</h3>
                   {service.description.map((description, index)=> {
                     return <p key={index}>{description}</p>
                   })}

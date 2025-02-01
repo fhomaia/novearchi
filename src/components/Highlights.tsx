@@ -24,12 +24,13 @@ const Highlights: React.FC = () => {
         whileInView={{y: 0}}
         transition={{ duration: 0.9 }}
         >
-          <div className='d-flex  d-lg-none w-100 align-items-center text-center py-4 mt-2 mt-xl-0' style={{backgroundColor: 'rgb(43, 43, 43)', maxWidth: '100vw'}}>
+          <div className='d-flex  flex-column d-lg-none w-100 align-items-center text-center py-4 mt-2 mt-xl-0' style={{backgroundColor: 'rgb(43, 43, 43)', maxWidth: '100vw'}}>
             <div className='d-flex col-12 align-items-center justify-content-center'>
               <div className='p-3 fs-2  text-center text-white'>
               <p>A palavra-chave é transformação.</p>
               </div>
             </div>
+            <Transform/>
           </div>
         </motion.div>
         <motion.div

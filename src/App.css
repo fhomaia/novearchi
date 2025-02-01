@@ -65,7 +65,7 @@ body {
 }
 
 .slide-menu {
-  top: 12.6%;
+  top: 11%;
 }
 
 
@@ -104,7 +104,8 @@ overflow:hidden;
   height: 33vw;
   margin-top: 4rem;
   width: 33vw;
-  border-radius: 50%
+  border-radius: 50%;
+  font-size: 15px;
 }
 
 .popover-arrow::after {
@@ -154,9 +155,9 @@ footer {
   }
 
   .service-circle {
-    height: 80vw;
-    margin-top: 2rem;
-    width: 90vw;
+    height: 70vw;
+    margin: 0rem;
+    width: 80vw;
     border-radius: 50%
   }
 
@@ -169,7 +170,7 @@ footer {
   }
 
   .sentence div, .squish-font-mobile {
-    font-size: 24px !important;
+    font-size: 22px !important;
   }
 
 }

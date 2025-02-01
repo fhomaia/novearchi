@@ -4,26 +4,32 @@ import '../App.css';
 import Carousel from './Carrossel';
 import CarouselMobile from './CarrousselMobile';
 import { useSwipeable } from 'react-swipeable';
-import kitchen from '../assets/kitchen.jpg';
-import sala from '../assets/sala.jpg';
-import outside from '../assets/outside.jpg';
+import kitchen from '../assets/virgini.jpg';
+import clinic from '../assets/clinic.jpg'
+import sala from '../assets/Post40F.jpg';
+import outside from '../assets/Insta12.jpg';
+import gym from '../assets/Velo3.jpg';
+
 import livingRoom from '../assets/livingRoom.jpg';
 const Main: React.FC = () => {
 
   const imagens = [
-    [{ src: sala, color: "#cfc7c7" }, { src: outside, color: "#d5a567" }],
-    [{ src: kitchen, color: "#cfc7c7" }, { src: livingRoom, color: "#b37745" }],
-    [{ src: sala, color: "#cfc7c7" }, { src: outside, color: "#d5a567" }]
+    [{ src: kitchen, color: "#cfc7c7", backgroundPositionY: '13%', backgroundSize: 'cover', backgroundPositionX: 'center' }, { src: outside, color: "#d5a567", backgroundPositionY: '-114%', backgroundSize: '150%', backgroundPositionX: 'center' }],
+    [{ src: sala, color: "#cfc7c7", backgroundPositionY: '36%', backgroundSize: 'cover', backgroundPositionX: 'center' }, { src: livingRoom, color: "#b37745", backgroundPositionY: '22%', backgroundSize: 'cover', backgroundPositionX: 'center' }],
+    [{ src: clinic, color: "#cfc7c7", backgroundPositionY: '50%', backgroundSize: 'cover', backgroundPositionX: '60%' }, { src: gym, color: "#d5a567", backgroundPositionY: '-3%', backgroundSize: 'cover', backgroundPositionX: 'center' }]
   ]
   const imagensMobile = [
-    { src: sala, color: "#cfc7c7" }, { src: outside, color: "#d5a567" },
-    { src: kitchen, color: "#cfc7c7" }, { src: livingRoom, color: "#b37745" },
-    { src: sala, color: "#cfc7c7" }, { src: outside, color: "#d5a567" }
+    { src: kitchen, color: "#cfc7c7", backgroundPositionY: '13%', backgroundSize: 'cover', backgroundPositionX: 'center' },
+    { src: outside, color: "#d5a567", backgroundPositionY: '-114%', backgroundSize: 'cover', backgroundPositionX: 'center' },
+    { src: sala, color: "#cfc7c7", backgroundPositionY: '36%', backgroundSize: 'cover', backgroundPositionX: 'center' },
+    { src: livingRoom, color: "#b37745", backgroundPositionY: '22%', backgroundSize: 'cover', backgroundPositionX: 'center' },
+    { src: clinic, color: "#cfc7c7", backgroundPositionY: '50%', backgroundSize: 'cover', backgroundPositionX: '60%' },
+    { src: gym, color: "#d5a567", backgroundPositionY: '-3%', backgroundSize: 'cover', backgroundPositionX: 'center' }
   ]
 
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const [indiceAtual, setIndiceAtual] = useState(0);
+  const [indiceAtual, setIndiceAtual] = useState(2);
   const [indiceAtualMobile, setIndiceAtualMobile] = useState(0);
   const [stopTrigger, setStopTrigger] = useState<boolean>(false);
 
