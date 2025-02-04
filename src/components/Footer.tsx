@@ -39,7 +39,7 @@ const Footer: React.FC<FooterProps> = ({ onVisibilityChange }) => {
           </div>
           <div className='d-flex flex-column gap-2'>
               <div className='text-white d-flex gap-2 align-items-center justify-content-end'>
-                  <a target="_blank" href="https://wa.me/553199790999?text=Olá!%20Gostaria%20de%20tirar%20dúvidas%20sobre%20os%20projetos."><img src={whatsapp} width="30"/></a>
+                  <a target="_blank" href="https://wa.me/5531990790999?text=Olá!%20Gostaria%20de%20tirar%20dúvidas%20sobre%20os%20projetos."><img src={whatsapp} width="30"/></a>
                   <a href="https://www.instagram.com/9arquitetura/" target="_blank"><img src={instagram} width="30"/></a>
               </div>
               <span className="d-none d-lg-inline" style={{fontSize: "12px"}}>contato@9arquitetura.com.br</span>

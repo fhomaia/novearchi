@@ -8,7 +8,8 @@ import kitchen from '../assets/virgini.jpg';
 import clinic from '../assets/clinic.jpg'
 import sala from '../assets/Post40F.jpg';
 import outside from '../assets/Insta12.jpg';
-import gym from '../assets/Velo3.jpg';
+import gym from '../assets/projects/Velo/Velo11.jpg';
+
 
 import livingRoom from '../assets/livingRoom.jpg';
 const Main: React.FC = () => {
@@ -16,15 +17,15 @@ const Main: React.FC = () => {
   const imagens = [
     [{ src: kitchen, color: "#cfc7c7", backgroundPositionY: '13%', backgroundSize: 'cover', backgroundPositionX: 'center' }, { src: outside, color: "#d5a567", backgroundPositionY: '-114%', backgroundSize: '150%', backgroundPositionX: 'center' }],
     [{ src: sala, color: "#cfc7c7", backgroundPositionY: '36%', backgroundSize: 'cover', backgroundPositionX: 'center' }, { src: livingRoom, color: "#b37745", backgroundPositionY: '22%', backgroundSize: 'cover', backgroundPositionX: 'center' }],
-    [{ src: clinic, color: "#cfc7c7", backgroundPositionY: '50%', backgroundSize: 'cover', backgroundPositionX: '60%' }, { src: gym, color: "#d5a567", backgroundPositionY: '-3%', backgroundSize: 'cover', backgroundPositionX: 'center' }]
+    [{ src: gym, color: "#d5a567", backgroundPositionY: '-3%', backgroundSize: 'cover', backgroundPositionX: 'center' }, { src: clinic, color: "#cfc7c7", backgroundPositionY: '50%', backgroundSize: 'cover', backgroundPositionX: '60%' }]
   ]
   const imagensMobile = [
     { src: kitchen, color: "#cfc7c7", backgroundPositionY: '13%', backgroundSize: 'cover', backgroundPositionX: 'center' },
     { src: outside, color: "#d5a567", backgroundPositionY: '-114%', backgroundSize: 'cover', backgroundPositionX: 'center' },
     { src: sala, color: "#cfc7c7", backgroundPositionY: '36%', backgroundSize: 'cover', backgroundPositionX: 'center' },
     { src: livingRoom, color: "#b37745", backgroundPositionY: '22%', backgroundSize: 'cover', backgroundPositionX: 'center' },
-    { src: clinic, color: "#cfc7c7", backgroundPositionY: '50%', backgroundSize: 'cover', backgroundPositionX: '60%' },
-    { src: gym, color: "#d5a567", backgroundPositionY: '-3%', backgroundSize: 'cover', backgroundPositionX: 'center' }
+    { src: gym, color: "#d5a567", backgroundPositionY: '-3%', backgroundSize: 'cover', backgroundPositionX: 'center' },
+    { src: clinic, color: "#cfc7c7", backgroundPositionY: '50%', backgroundSize: 'cover', backgroundPositionX: '60%' }
   ]
 
 

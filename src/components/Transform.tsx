@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import medReviewRender from '../assets/medReviewRender.jpg';
-import medReviweReal from '../assets/medReviewReal.jpg';
+import medReviewRender from '../assets/before.jpg';
+import medReviweReal from '../assets/after.jpg';
 
 
 const Transform: React.FC = () => {
@@ -24,7 +24,7 @@ const Transform: React.FC = () => {
         style={{
           height: '33vh',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center 32%',
           backgroundImage: `url(${medReviewRender})`,
         }}
       >
