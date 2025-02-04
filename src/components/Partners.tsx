@@ -40,7 +40,7 @@ const Partners: React.FC = () => {
 
     controls = animate(xTranslation, [0, finalPosition], {
         ease: 'linear',
-        duration: 15,
+        duration: 20,
         repeat: Infinity,
         repeatType: 'loop',
         repeatDelay: 0

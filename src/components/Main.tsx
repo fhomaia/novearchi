@@ -7,6 +7,7 @@ import { useSwipeable } from 'react-swipeable';
 import kitchen from '../assets/virgini.jpg';
 import clinic from '../assets/clinic.jpg'
 import sala from '../assets/Post40F.jpg';
+import medReview7 from '../assets/projects/medReview/medReview7.jpg';
 import outside from '../assets/Insta12.jpg';
 import gym from '../assets/projects/Velo/Velo11.jpg';
 
@@ -25,12 +26,12 @@ const Main: React.FC = () => {
     { src: sala, color: "#cfc7c7", backgroundPositionY: '36%', backgroundSize: 'cover', backgroundPositionX: 'center' },
     { src: livingRoom, color: "#b37745", backgroundPositionY: '22%', backgroundSize: 'cover', backgroundPositionX: 'center' },
     { src: gym, color: "#d5a567", backgroundPositionY: '-3%', backgroundSize: 'cover', backgroundPositionX: 'center' },
-    { src: clinic, color: "#cfc7c7", backgroundPositionY: '50%', backgroundSize: 'cover', backgroundPositionX: '60%' }
+    { src: medReview7, color: "#cfc7c7", backgroundPositionY: '50%', backgroundSize: 'cover', backgroundPositionX: 'center' }
   ]
 
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const [indiceAtual, setIndiceAtual] = useState(2);
+  const [indiceAtual, setIndiceAtual] = useState(0);
   const [indiceAtualMobile, setIndiceAtualMobile] = useState(0);
   const [stopTrigger, setStopTrigger] = useState<boolean>(false);
 

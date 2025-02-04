@@ -1,7 +1,6 @@
 
 import React from 'react';
 import '../App.css';
-import velotime from '../assets/projects/Velo5.jpg';
 import project_2 from '../assets/projects/1c.jpg';
 import project_3 from '../assets/projects/IMG_2386.jpg';
 import project_4 from '../assets/projects/Post 5.jpg';
@@ -95,7 +94,7 @@ const Projects: React.FC = () => {
       src: velo11,
       title: 'Velotime Training',
       tag: 'Arquitetura da Performance',
-      pictures: [velo1 ,velo2, velo4, velo5, velo6, velo7,velo8, velo9, velo10, velo11]
+      pictures: [velo11, velo1 ,velo2, velo4, velo5, velo6, velo7,velo8, velo9, velo10]
     },
     {
       src: medReview7,

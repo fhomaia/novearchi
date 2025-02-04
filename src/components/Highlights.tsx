@@ -15,7 +15,9 @@ const Highlights: React.FC = () => {
         transition={{ duration: 0.9 }}
         >
           <div className='d-flex w-100 align-items-center text-center mb-lg-4 mb-0'>
-            <div className='col-12 col-lg-8' style={{backgroundImage: `url(${highlightKitchen})`, backgroundSize: '110%', height: '33vh', backgroundPosition: 'center'}}>
+            <div className='d-none d-lg-block col-lg-8' style={{backgroundImage: `url(${highlightKitchen})`, backgroundSize: '129%', height: '33vh', backgroundPosition: '9% 62%', transform: 'scaleX(-1)'}}>
+            </div>
+            <div className='col-12 d-lg-none' style={{backgroundImage: `url(${highlightKitchen})`, backgroundSize: '136%', height: '17vh', backgroundPosition: '9% 62%', transform: 'scaleX(-1)'}}>
             </div>
           </div>
         </motion.div>
@@ -24,13 +26,13 @@ const Highlights: React.FC = () => {
         whileInView={{y: 0}}
         transition={{ duration: 0.9 }}
         >
-          <div className='d-flex  flex-column d-lg-none w-100 align-items-center text-center py-4 mt-2 mt-xl-0' style={{backgroundColor: 'rgb(43, 43, 43)', maxWidth: '100vw'}}>
+          <div className='d-flex  flex-column d-lg-none w-100 align-items-center text-center mt-2 mt-xl-0' style={{backgroundColor: 'rgb(43, 43, 43)', maxWidth: '100vw'}}>
             <div className='d-flex col-12 align-items-center justify-content-center'>
               <div className='p-3 fs-2  text-center text-white'>
               <p>A palavra-chave é transformação.</p>
               </div>
             </div>
-            <Transform/>
+            <Transform height='17vh' backgroundPosition='center 40%'/>
           </div>
         </motion.div>
         <motion.div
@@ -44,7 +46,7 @@ const Highlights: React.FC = () => {
               <p>A palavra-chave é transformação.</p>
               </div>
             </div>
-            <Transform/>
+            <Transform height='33vh' backgroundPosition='center 40%'/>
           </div>
         </motion.div>
         <div>
