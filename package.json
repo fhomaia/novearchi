@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://fhomaia.github.io/novearchi",
+  "homepage": "https://www.9arquitetura.com.br",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
