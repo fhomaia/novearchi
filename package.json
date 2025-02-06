@@ -1,9 +1,9 @@
 {
-  "name": "novearchi",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://www.9arquitetura.com.br",
+  "name": "novearchi",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
