@@ -1,16 +1,16 @@
 
 import React from 'react';
 import '../App.css';
-import project_2 from '../assets/projects/1c.jpg';
 import project_3 from '../assets/projects/IMG_2386.jpg';
 import project_4 from '../assets/projects/Post 5.jpg';
-import project_5 from '../assets/projects/Marcel.jpg';
-import project_6 from '../assets/projects/bathroom.jpg';
+// import project_5 from '../assets/projects/Marcel.jpg';
 import Card from './Card';
-import CSM_1 from '../assets/projects/CSM/Post 31.jpg';
-import CSM_2 from '../assets/projects/CSM/Post 32-L.jpg';
-import CSM_3 from '../assets/projects/CSM/Post 34.jpg';
-import CSM_4 from '../assets/projects/CSM/Post 35.jpg';
+import CSM1 from '../assets/projects/CSM/CSM1.jpg';
+import CSM2 from '../assets/projects/CSM/CSM2.jpg';
+import CSM3 from '../assets/projects/CSM/CSM3.jpg';
+import CSM5 from '../assets/projects/CSM/CSM5.jpg';
+import CSM6 from '../assets/projects/CSM/CSM6.jpg';
+import CSM7 from '../assets/projects/CSM/CSM7.jpg';
 import virginie1 from '../assets/projects/Virginie/1f.jpg';
 import virginie2 from '../assets/projects/Virginie/2.jpg';
 import virginie3 from '../assets/projects/Virginie/3.jpg';
@@ -73,6 +73,12 @@ const Projects: React.FC = () => {
       pictures: [virginie7,virginie1, virginie6, virginie3, virginie4, virginie5, virginie2]
     },
     {
+      src: CSM1,
+      title: 'Celia Soutto',
+      tag: "Projeto comercial",
+      pictures: [CSM1, CSM2, CSM3, CSM5, CSM6, CSM7]
+    },
+    {
       src: isabela1,
       title: 'Apartamento Sublime',
       tag: 'Inovação & Sofisticação',
@@ -101,12 +107,6 @@ const Projects: React.FC = () => {
       title: 'AnestReview / MedReview',
       tag: 'Estúdio da Medicina',
       pictures: [medReview1 ,medReview2, medReview4, medReview5, medReview6]
-    },
-    {
-      src: project_2,
-      title: 'Celia Soutto',
-      tag: "Projeto comercial",
-      pictures: [CSM_1, CSM_2, CSM_3, CSM_4]
     },
     {
       src: project_3,

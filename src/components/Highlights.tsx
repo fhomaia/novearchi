@@ -8,7 +8,7 @@ import highlightKitchen from '../assets/highlights.jpg';
 const Highlights: React.FC = () => {
 
   return (
-    <div id="about" className="d-flex flex-column position-relative">
+    <div className="d-flex flex-column position-relative">
         <motion.div
         initial={{ y: 100}}
         whileInView={{y: 0}}
