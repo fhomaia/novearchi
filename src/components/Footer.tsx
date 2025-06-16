@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 
 
 interface FooterProps {
-    onVisibilityChange: (inView: boolean) => void; // Função para informar a visibilidade
+    onVisibilityChange: (inView: boolean) => void;
   }
   
 
@@ -46,9 +46,6 @@ const Footer: React.FC<FooterProps> = ({ onVisibilityChange }) => {
           </div>
         </div>
       </footer>
-      {/* <div  className="text-center" style={{backgroundColor: 'rgb(43, 43, 43)'}}>
-        <span><a href="https://github.com/fhomaia/" className="text-muted fw-normal text-no-decoration" target="_blank">Criado por Fernando Maia</a></span>
-    </div> */}
     </>
   )
 }
