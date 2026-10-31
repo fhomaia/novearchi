@@ -22,7 +22,7 @@ const CardDetail: React.FC<CardDetailsProp> = ({ title, tag, pictures, show, onC
       {pictures.length > 0 ? (
           <div>
             {pictures.map((picture, index) => (
-              <img key={index} src={picture} alt={`imagem-${index}`} className="img-fluid mb-3 w-100" />
+              <img key={index} src={picture} alt={`imagem-${index}`} className="img-fluid mb-3 w-100" decoding="async" />
             ))}
           </div>
         ) : (

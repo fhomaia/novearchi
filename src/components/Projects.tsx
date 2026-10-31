@@ -1,8 +1,8 @@
 
 import React from 'react';
 import '../App.css';
-import project_3 from '../assets/projects/IMG_2386.jpg';
-import project_4 from '../assets/projects/Post 5.jpg';
+import project_3 from '../assets/projects/IMG_2386.jpg?w=800';
+import project_4 from '../assets/projects/Post 5.jpg?w=800';
 // import project_5 from '../assets/projects/Marcel.jpg';
 import Card from './Card';
 import CSM1 from '../assets/projects/CSM/CSM1.jpg';
@@ -61,49 +61,55 @@ import medReview2 from '../assets/projects/medReview/medReview2.jpg';
 import medReview4 from '../assets/projects/medReview/medReview4.jpg';
 import medReview5 from '../assets/projects/medReview/medReview5.jpg';
 import medReview6 from '../assets/projects/medReview/medReview6.jpg';
-import medReview7 from '../assets/projects/medReview/medReview7.jpg';
+import virginie7Thumb from '../assets/projects/Virginie/7f.jpg?w=800';
+import CSM1Thumb from '../assets/projects/CSM/CSM1.jpg?w=800';
+import isabela1Thumb from '../assets/projects/Isabela/Isabela1.jpg?w=800';
+import pedro3Thumb from '../assets/projects/P/pedro3.jpg?w=800';
+import lorrah1Thumb from '../assets/projects/lorrah/lorrah1.jpg?w=800';
+import velo11Thumb from '../assets/projects/Velo/Velo11.jpg?w=800';
+import medReview7Thumb from '../assets/projects/medReview/medReview7.jpg?w=800';
 
 const Projects: React.FC = () => {
 
   const projects = [
     {
-      src: virginie7,
+      src: virginie7Thumb,
       title: 'Apartamento Santo Antônio',
       tag: 'Refúgio sofisticado',
       pictures: [virginie7,virginie1, virginie6, virginie3, virginie4, virginie5, virginie2]
     },
     {
-      src: CSM1,
+      src: CSM1Thumb,
       title: 'Celia Soutto',
       tag: "Projeto comercial",
       pictures: [CSM1, CSM2, CSM3, CSM5, CSM6, CSM7]
     },
     {
-      src: isabela1,
+      src: isabela1Thumb,
       title: 'Apartamento Sublime',
       tag: 'Inovação & Sofisticação',
       pictures: [isabela1 ,isabela2, isabela3, isabela4, isabela5, isabela6, isabela7]
     },
     {
-      src: pedro3,
+      src: pedro3Thumb,
       title: 'Apartamento Floresta',
       tag: 'Lavabo Elementar: Pedra, Concreto e Madeira',
       pictures: [pedro1 ,pedro2, pedro3, pedro4, pedro5, pedro6, pedro7,pedro8, pedro9, pedro10]
     },
     {
-      src: lorrah1,
+      src: lorrah1Thumb,
       title: 'Apartamento Lourdes',
       tag: 'Addams de Alma Colorida',
       pictures: [lorrah1 ,lorrah2, lorrah3, lorrah4, lorrah5, lorrah6, lorrah7,lorrah8, lorrah9, lorrah10, lorrah11]
     },
     {
-      src: velo11,
+      src: velo11Thumb,
       title: 'Velotime Training',
       tag: 'Arquitetura da Performance',
       pictures: [velo11, velo1 ,velo2, velo4, velo5, velo6, velo7,velo8, velo9, velo10]
     },
     {
-      src: medReview7,
+      src: medReview7Thumb,
       title: 'AnestReview / MedReview',
       tag: 'Estúdio da Medicina',
       pictures: [medReview1 ,medReview2, medReview4, medReview5, medReview6]

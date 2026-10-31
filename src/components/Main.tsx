@@ -18,7 +18,7 @@ const Main: React.FC = () => {
   const imagens = [
     [{ src: kitchen, color: "#cfc7c7", backgroundPositionY: '13%', backgroundSize: 'cover', backgroundPositionX: 'center' }, { src: outside, color: "#d5a567", backgroundPositionY: '-114%', backgroundSize: 'cover', backgroundPositionX: 'center' }],
     [{ src: sala, color: "#cfc7c7", backgroundPositionY: '36%', backgroundSize: 'cover', backgroundPositionX: 'center' }, { src: livingRoom, color: "#b37745", backgroundPositionY: '22%', backgroundSize: 'cover', backgroundPositionX: 'center' }],
-    [{ src: gym, color: "#d5a567", backgroundPositionY: '-3%', backgroundSize: 'cover', backgroundPositionX: 'center' }, { src: CSM3, color: "#cfc7c7", backgroundPositionY: '50center%', backgroundSize: 'cover', backgroundPositionX: 'center' }]
+    [{ src: gym, color: "#d5a567", backgroundPositionY: '-3%', backgroundSize: 'cover', backgroundPositionX: 'center' }, { src: CSM3, color: "#cfc7c7", backgroundPositionY: '0%', backgroundSize: 'cover', backgroundPositionX: 'center' }]
   ]
   const imagensMobile = [
     { src: kitchen, color: "#cfc7c7", backgroundPositionY: '13%', backgroundSize: 'cover', backgroundPositionX: 'center' },
@@ -106,7 +106,7 @@ const Main: React.FC = () => {
           {imagens.map((_image, index) => (
             <div className='col-3' style={{cursor: "pointer"}} onClick={() => {setIndiceAtual(index); iniciarIntervalo()}} key={index}>
             <span>{index +1}</span>
-            <div className={indiceAtual == index? 'bg-white mw-100 col-6' : 'bg-transparent col-1'} style={{height: '2px' , transition: 'width 3s ease-out'}}></div>
+            <div className={`${indiceAtual == index ? 'bg-white' : 'bg-transparent'} col-6`} style={{height: '2px', transformOrigin: 'left', transform: `scaleX(${indiceAtual == index ? 1 : 0.17})`, transition: 'transform 3s ease-out'}}></div>
           </div>
           ))}
         </div>

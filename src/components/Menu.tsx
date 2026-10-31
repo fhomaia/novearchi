@@ -9,11 +9,11 @@ interface MenuProps {
 function Menu({ classStyle, toggleMenu, showMenu }: MenuProps) {
     return (
         <div className={classStyle}>
-            <a href="#home"  className="text-white" style={{textDecoration: 'none'}} onClick={showMenu ? toggleMenu : () => {}} >HOME</a>
+            <Link to="/"  className="text-white" style={{textDecoration: 'none'}} onClick={showMenu ? toggleMenu : () => {}} >HOME</Link>
             <Link to="/about" className="text-white" style={{ textDecoration: 'none' }} onClick={showMenu ? toggleMenu : () => {}}>SOBRE</Link>
-            <a href="#projects"  className="text-white" style={{textDecoration: 'none'}} onClick={showMenu ? toggleMenu : () => {}}>PROJETOS</a>
-            <a href="#conexao"  className="text-white" style={{textDecoration: 'none'}} onClick={showMenu ? toggleMenu : () => {}}>CONEXÃO 9</a>
-            <a href="#contact"  className="text-white" style={{textDecoration: 'none'}} onClick={showMenu ? toggleMenu : () => {}}>CONTATOS</a>
+            <Link to="/#projects"  className="text-white" style={{textDecoration: 'none'}} onClick={showMenu ? toggleMenu : () => {}}>PROJETOS</Link>
+            <Link to="/#conexao"  className="text-white" style={{textDecoration: 'none'}} onClick={showMenu ? toggleMenu : () => {}}>CONEXÃO 9</Link>
+            <Link to="/#contact"  className="text-white" style={{textDecoration: 'none'}} onClick={showMenu ? toggleMenu : () => {}}>CONTATOS</Link>
         </div>
     )
 }

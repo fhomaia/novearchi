@@ -1,8 +1,6 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../App.css';
-import { animate, motion, useMotionValue } from "framer-motion";
-import useMeasure from 'react-use-measure';
 import csm from '../assets/logos/csm.svg';
 import CEMIG from '../assets/logos/CEMIG.svg';
 import velotime from '../assets/logos/velotime.svg';
@@ -31,28 +29,9 @@ const Partners: React.FC = () => {
     {src: kakilang, height: '70'}
   ]
 
-  let [ref, { width }] = useMeasure();
-  const xTranslation = useMotionValue(0);
-
-  useEffect(() => {
-    let controls;
-    let finalPosition = -width - logos.length
-
-    controls = animate(xTranslation, [0, finalPosition], {
-        ease: 'linear',
-        duration: 20,
-        repeat: Infinity,
-        repeatType: 'loop',
-        repeatDelay: 0
-    })
-    
-    return controls.stop
-  }, [xTranslation, width])
-
-
   return (
-    <div className="d-flex partners" style={{background:'linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%)', height: '15vh'}}>
-      <motion.div ref={ref} className='d-flex vw-100 align-items-center p-4 justify-content-between' style={{x: xTranslation}}>
+    <div className="d-flex partners overflow-hidden vw-100" style={{background:'linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%)', height: '15vh'}}>
+      <div className='d-flex align-items-center partners-track'>
         {
             [...logos, ...logos, ...logos].map((logo, i) => {
                 return (
@@ -64,7 +43,7 @@ const Partners: React.FC = () => {
                 )
             })
         }
-        </motion.div>
+        </div>
     </div>
   )
 }
