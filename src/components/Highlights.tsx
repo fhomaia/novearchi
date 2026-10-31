@@ -12,9 +12,10 @@ const RevealOnScrollDown: React.FC<{children: React.ReactNode}> = ({ children })
 
   return (
     <motion.div
-      initial={{ y: 100 }}
-      animate={{ y: position.y }}
+      initial={{ transform: 'translateY(100px)' }}
+      animate={{ transform: `translateY(${position.y}px)` }}
       transition={{ duration: position.duration }}
+      style={{ willChange: 'transform' }}
       onViewportEnter={(entry) => setPosition({ y: 0, duration: entry && entry.boundingClientRect.top < 0 ? 0 : 0.9 })}
       onViewportLeave={(entry) => {
         if (entry && entry.boundingClientRect.top > 0) {
