@@ -144,6 +144,18 @@ max-width: 100vw;
   animation: partners-scroll 20s linear infinite;
 }
 
+@media (max-width: 991px) {
+  .partners-track {
+    animation-duration: 35s;
+  }
+}
+
+@media (max-width: 640px) {
+  .partners-track {
+    animation-duration: 60s;
+  }
+}
+
 footer {
   background-color: rgb(43, 43, 43);
   padding: 1.5rem
