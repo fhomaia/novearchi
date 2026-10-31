@@ -33,9 +33,11 @@ const Card: React.FC <CardProps> = ({project, duration, initial}) => {
       id="card-container"
       onClick={handleShowModal}
       className='overflow-hidden col-12 col-md-6 col-lg-3 position-relative'
-      initial= {{ x: initial}}
-      whileInView={{x: 0}}
+      // Animating `transform` directly keeps this on the compositor
+      initial= {{ transform: `translateX(${initial}px)` }}
+      whileInView={{ transform: 'translateX(0px)' }}
       transition={{ duration: duration}}
+      style={{ willChange: 'transform' }}
       >
         <div id="card" className='w-100 h-100' style={{backgroundImage: inView ? `url(${project.src})` : undefined}}>
         </div>
