@@ -56,7 +56,13 @@ const Services: React.FC = () => {
                   {service.description.map((description, index)=> {
                     return <p key={index}>{description}</p>
                   })}
-                  <button className='btn btn-outline-dark'>Saiba Mais</button>
+                  <a
+                    className='btn btn-outline-dark'
+                    target="_blank"
+                    href={`https://wa.me/5531990790999?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre ${service.title}.`)}`}
+                  >
+                    Saiba Mais
+                  </a>
                 </div>
               </motion.div>
             )

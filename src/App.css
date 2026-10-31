@@ -97,6 +97,7 @@ font-weight:300;
 font-size:32px;
 height:30vh;
 overflow:hidden;
+contain: layout;
 }
 
 
@@ -136,6 +137,11 @@ max-width: 100vw;
 
 .flicker-animation{
   color: orange;
+}
+
+.partners-track {
+  width: max-content;
+  animation: partners-scroll 20s linear infinite;
 }
 
 footer {
@@ -182,6 +188,10 @@ footer {
 }
 
 
+
+@keyframes partners-scroll {
+  to {transform: translate3d(-33.3333%, 0, 0);}
+}
 
 @keyframes showup {
   0% {opacity:0;}

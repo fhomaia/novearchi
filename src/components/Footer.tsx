@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
 import noveLogo from '../assets/logo_9arq_vert_rgb_laranja_pos_final_pc 1.svg';
 import whatsapp from '../assets/icons8-whatsapp.svg';
@@ -29,10 +30,10 @@ const Footer: React.FC<FooterProps> = ({ onVisibilityChange }) => {
       <footer ref={ref} id="contact" className="d-flex  flex-column text-white justify-content-between 100-vw align-items-center">
         <div className='d-flex  text-white justify-content-between w-100 mb-2 align-items-start'>
           <div>
-            <a className="d-flex align-items-center gap-2 mb-2" href="#home">
+            <Link className="d-flex align-items-center gap-2 mb-2" to="/" style={{textDecoration: 'none'}}>
               <img src={noveLogo} width='30' />
               <h1 className="mb-0 fs-6 text-white"><span className="fw-bold">NOVE</span><br /><span>ARQUITETURA</span></h1>
-            </a>
+            </Link>
             <div className="w-100" style={{fontSize: "12px"}}>
               <span >Av. Rio Grande do Norte, 726, Funcionários, sla. 1204 BH - MG</span>
           </div>

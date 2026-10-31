@@ -1,31 +1,45 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import {  motion } from "framer-motion";
 import Transform from './Transform';
 import highlightKitchen from '../assets/highlights.jpg';
 
+// Slides up only when scrolling down: it resets after leaving through the
+// bottom of the viewport, so coming back from below doesn't replay it.
+const RevealOnScrollDown: React.FC<{children: React.ReactNode}> = ({ children }) => {
+  const [position, setPosition] = useState({ y: 100, duration: 0 });
+
+  return (
+    <motion.div
+      initial={{ y: 100 }}
+      animate={{ y: position.y }}
+      transition={{ duration: position.duration }}
+      onViewportEnter={(entry) => setPosition({ y: 0, duration: entry && entry.boundingClientRect.top < 0 ? 0 : 0.9 })}
+      onViewportLeave={(entry) => {
+        if (entry && entry.boundingClientRect.top > 0) {
+          setPosition({ y: 100, duration: 0 });
+        }
+      }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
 const Highlights: React.FC = () => {
 
   return (
     <div className="d-flex flex-column position-relative">
-        <motion.div
-        initial={{ y: 100}}
-        whileInView={{y: 0}}
-        transition={{ duration: 0.9 }}
-        >
+        <RevealOnScrollDown>
           <div className='d-flex w-100 align-items-center text-center mb-lg-4 mb-0'>
             <div className='d-none d-lg-block col-lg-8' style={{backgroundImage: `url(${highlightKitchen})`, backgroundSize: '129%', height: '33vh', backgroundPosition: '9% 62%', transform: 'scaleX(-1)'}}>
             </div>
             <div className='col-12 d-lg-none' style={{backgroundImage: `url(${highlightKitchen})`, backgroundSize: '136%', height: '17vh', backgroundPosition: '9% 62%', transform: 'scaleX(-1)'}}>
             </div>
           </div>
-        </motion.div>
-        <motion.div
-        initial={{ y: 100 }}
-        whileInView={{y: 0}}
-        transition={{ duration: 0.9 }}
-        >
+        </RevealOnScrollDown>
+        <RevealOnScrollDown>
           <div className='d-flex  flex-column d-lg-none w-100 align-items-center text-center mt-2 mt-xl-0' style={{backgroundColor: 'rgb(43, 43, 43)', maxWidth: '100vw'}}>
             <div className='d-flex col-12 align-items-center justify-content-center'>
               <div className='p-3 fs-2  text-center text-white'>
@@ -34,12 +48,8 @@ const Highlights: React.FC = () => {
             </div>
             <Transform height='17vh' backgroundPosition='center 40%'/>
           </div>
-        </motion.div>
-        <motion.div
-        initial={{ y: 100}}
-        whileInView={{y: 0}}
-        transition={{ duration: 0.9 }}
-        >
+        </RevealOnScrollDown>
+        <RevealOnScrollDown>
           <div className='d-none d-lg-flex w-100 align-items-center text-center mt-2 mt-xl-0' style={{backgroundColor: 'rgb(43, 43, 43)', maxWidth: '100vw'}}>
             <div className='col-lg-6 d-flex align-items-center text-white justify-content-center'>
               <div className='p-3 text-center' style={{fontSize: '32px', fontWeight: '300'}}>
@@ -48,7 +58,7 @@ const Highlights: React.FC = () => {
             </div>
             <Transform height='33vh' backgroundPosition='center 40%'/>
           </div>
-        </motion.div>
+        </RevealOnScrollDown>
         <div>
           <div className='d-flex w-100 align-items-center text-center' style={{height: '50vh', maxWidth: '100vw'}}>
             <div className='d-flex col-12 align-items-center  justify-content-center'>
