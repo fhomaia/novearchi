@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
+import Lenis from 'lenis';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Outlet, useLocation, useNavigationType } from 'react-router-dom';
 import Partners from './components/Partners';
@@ -14,11 +15,37 @@ import Contact from './components/Contact';
 const ScrollManager: React.FC = () => {
   const { hash, key } = useLocation();
   const navigationType = useNavigationType();
+  const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    if (hash) {
-      document.querySelector(hash)?.scrollIntoView();
-    } else if (navigationType !== 'POP') {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const lenis = new Lenis({
+      autoRaf: true,
+      prevent: (node) => node.closest('.modal') !== null,
+    });
+    lenisRef.current = lenis;
+
+    return () => {
+      lenis.destroy();
+      lenisRef.current = null;
+    };
+  }, []);
+
+  useEffect(() => {
+    const lenis = lenisRef.current;
+    const target = hash ? document.querySelector<HTMLElement>(hash) : null;
+
+    if (hash && !target) return;
+    if (!hash && navigationType === 'POP') return;
+
+    if (lenis) {
+      // The new route's height isn't measured yet
+      lenis.resize();
+      lenis.scrollTo(target ?? 0, { immediate: navigationType === 'POP' });
+    } else if (target) {
+      target.scrollIntoView();
+    } else {
       window.scrollTo(0, 0);
     }
   }, [hash, key, navigationType]);
