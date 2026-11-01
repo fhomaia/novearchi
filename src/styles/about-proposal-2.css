@@ -108,6 +108,7 @@
 .ap2-hero-text {
   border-left: 2px solid var(--ap2-orange);
   font-size: clamp(1.05rem, 1.5vw, 1.55rem);
+  font-weight: 300;
   line-height: 1.5;
   margin: 0;
   max-width: 30em;
@@ -144,6 +145,7 @@
 .ap2-essence-text p:not(.ap2-eyebrow),
 .ap2-people-text p:not(.ap2-eyebrow) {
   font-size: clamp(1.05rem, 1.45vw, 1.5rem);
+  font-weight: 300;
   line-height: 1.5;
   margin: 0;
 }
@@ -251,9 +253,9 @@
   margin: 0.25rem 0 1rem;
 }
 
-.ap2-pillars p {
+.ap2-pillars article p {
   font-size: clamp(1.05rem, 1.45vw, 1.5rem);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.4;
   margin: 0;
   max-width: 17em;
