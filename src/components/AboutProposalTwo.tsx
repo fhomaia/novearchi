@@ -55,9 +55,14 @@ const AboutProposalTwo: React.FC = () => {
         <div className='ap2-hero-content'>
           <p className='ap2-eyebrow'>Sobre nós</p>
           <h2>Espaços que inspiram,<br />ideias que <em>transformam.</em></h2>
-          <p className='ap2-hero-text'>
-            Somos um escritório de arquitetura movido pela criatividade, pelo olhar atento aos detalhes e pela vontade de criar espaços que fazem sentido — para as pessoas, para a cidade e para o futuro.
-          </p>
+          <div className='ap2-hero-text'>
+            <p>
+              Somos um escritório de arquitetura movido pela criatividade, pelo olhar atento aos detalhes e pela vontade de criar espaços que fazem sentido — para as pessoas, para a cidade e para o futuro.
+            </p>
+            <p className='ap2-hero-fact'>
+              Desde 2015, já assinamos mais de 150 projetos residenciais e comerciais.
+            </p>
+          </div>
         </div>
       </section>
 
