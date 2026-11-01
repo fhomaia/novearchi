@@ -1,0 +1,268 @@
+.about-proposal {
+  --ap-dark: rgb(43, 43, 43);
+  --ap-accent: #d55700;
+  --ap-accent-text: #b84a00;
+  color: #212529;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.about-proposal h2,
+.about-proposal h3,
+.about-proposal h4 {
+  font-weight: 300;
+}
+
+.about-proposal h3 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.ap-eyebrow {
+  color: var(--ap-accent-text);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.ap-section {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 6rem 1.5rem;
+}
+
+.ap-hero {
+  align-items: flex-end;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  display: flex;
+  min-height: 85vh;
+  position: relative;
+}
+
+.ap-hero::before {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1) 65%);
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+
+.ap-hero-content {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 3rem 1.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.ap-hero .ap-eyebrow {
+  color: white;
+}
+
+.ap-hero h2 {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  line-height: 1.15;
+  margin: 0;
+  max-width: 16em;
+}
+
+.ap-facts {
+  background-color: var(--ap-dark);
+  color: white;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  padding: 2rem max(1.5rem, calc((100% - 1152px) / 2));
+}
+
+.ap-facts span,
+.ap-facts strong {
+  display: block;
+}
+
+.ap-facts span {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.ap-facts strong {
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.ap-story-grid {
+  align-items: center;
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+}
+
+.ap-story-grid img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  width: 100%;
+}
+
+.ap-story-grid p:not(.ap-eyebrow) {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.ap-process {
+  background-color: var(--ap-dark);
+  color: white;
+}
+
+.ap-process .ap-eyebrow {
+  color: #f08a44;
+}
+
+.ap-steps {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 3rem 0 0;
+  padding: 0;
+}
+
+.ap-steps img {
+  aspect-ratio: 4 / 3;
+  display: block;
+  margin-bottom: 1.25rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.ap-step-number {
+  color: #f08a44;
+  display: block;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+}
+
+.ap-steps h4 {
+  font-size: 1.25rem;
+}
+
+.ap-steps p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.85;
+}
+
+.ap-vision {
+  align-items: center;
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+}
+
+.ap-vision p:not(.ap-eyebrow) {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.ap-people {
+  background-color: var(--ap-dark);
+  color: white;
+  text-align: center;
+}
+
+.ap-people .ap-eyebrow {
+  color: #f08a44;
+}
+
+.ap-people-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 3rem auto 0;
+  max-width: 540px;
+}
+
+.ap-people-grid figure {
+  margin: 0;
+}
+
+.ap-people-grid img {
+  aspect-ratio: 5 / 7;
+  object-fit: cover;
+  width: 100%;
+}
+
+.ap-people-grid figcaption {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-top: 1rem;
+}
+
+.about-proposal .ap-link {
+  border-bottom: 1px solid currentColor;
+  color: var(--ap-accent-text);
+  padding-bottom: 2px;
+  text-decoration: none;
+}
+
+.ap-cta {
+  background-color: #f8f8f8;
+  padding: 6rem 1.5rem;
+  text-align: center;
+}
+
+.ap-cta p {
+  margin: 2rem 0 0;
+}
+
+.about-proposal .ap-button,
+.about-proposal .ap-button:hover {
+  background-color: var(--ap-accent);
+  color: white;
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  text-decoration: none;
+}
+
+.about-proposal .ap-button:hover {
+  background-color: var(--ap-accent-text);
+}
+
+@media (max-width: 991px) {
+  .ap-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .ap-story-grid {
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ap-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ap-vision {
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ap-facts,
+  .ap-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
