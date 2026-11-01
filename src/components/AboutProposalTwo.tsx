@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import '../App.css';
 import '../styles/about-proposal-2.css';
@@ -36,21 +36,16 @@ const pillars = [
   },
 ];
 
+const replayIcon = (event: React.SyntheticEvent<HTMLElement>) => {
+  event.currentTarget.querySelector('svg')?.getAnimations({ subtree: true }).forEach((animation) => {
+    animation.currentTime = animation.effect?.getComputedTiming().delay ?? 0;
+  });
+};
+
 const whatsapp = `https://wa.me/5531990790999?text=${encodeURIComponent('Olá! Gostaria de conversar sobre um projeto.')}`;
 
 const AboutProposalTwo: React.FC = () => {
-  const [iconsDrawn, setIconsDrawn] = useState(false);
-  // Like the section reveals, redraw only when scrolling down into the cards
-  const { ref: pillarsRef } = useInView({
-    threshold: 0.3,
-    onChange: (inView, entry) => {
-      if (inView) {
-        setIconsDrawn(true);
-      } else if (entry.boundingClientRect.top > 0) {
-        setIconsDrawn(false);
-      }
-    },
-  });
+  const { ref: pillarsRef, inView: pillarsInView } = useInView({ threshold: 0.3 });
 
   return (
     <div className='about-proposal-2'>
@@ -82,9 +77,9 @@ const AboutProposalTwo: React.FC = () => {
 
       <section className='ap2-pillars'>
         <p className='ap2-eyebrow'>Nossos pilares</p>
-        <div ref={pillarsRef} className={`ap2-pillars-grid ${iconsDrawn ? 'ap2-icons-drawn' : ''}`}>
+        <div ref={pillarsRef} className={`ap2-pillars-grid ${pillarsInView ? 'ap2-icons-active' : ''}`}>
           {pillars.map((pillar) => (
-            <article key={pillar.number}>
+            <article key={pillar.number} onClick={replayIcon} onMouseEnter={replayIcon}>
               <svg viewBox='0 0 66 64' aria-hidden='true'><path d={pillar.icon} pathLength={1} /></svg>
               <span>{pillar.number}</span>
               <h4>{pillar.title}</h4>

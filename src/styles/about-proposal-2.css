@@ -199,63 +199,43 @@
   stroke: currentColor;
   stroke-width: 1;
   top: 2.2vw;
-  transition: transform .6s ease;
   width: 6.5vw;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ap2-icons-active article:nth-child(1) svg {
+    animation: ap2-spin 5s ease-in-out infinite;
+  }
+
+  .ap2-icons-active article:nth-child(2) svg {
+    animation: ap2-sway 5s ease-in-out .4s infinite;
+    transform-origin: 20% 90%;
+  }
+
+  .ap2-icons-active article:nth-child(3) path {
+    animation: ap2-redraw 5s ease-in-out .8s infinite;
+  }
 }
 
 .ap2-pillars path {
   stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-}
-
-.ap2-icons-drawn path {
   stroke-dashoffset: 0;
-  transition: stroke-dashoffset 1.4s ease-in-out;
 }
 
-.ap2-icons-drawn article:nth-child(2) path {
-  transition-delay: .3s;
-}
-
-.ap2-icons-drawn article:nth-child(3) path {
-  transition-delay: .6s;
-}
-
-@media (hover: hover) {
-  .ap2-pillars article:nth-child(1):hover svg {
-    transform: rotate(90deg);
-  }
-
-  .ap2-pillars article:nth-child(2):hover svg {
-    animation: ap2-sway 1.2s ease-in-out;
-    transform-origin: 20% 90%;
-  }
-
-  .ap2-pillars article:nth-child(3):hover path {
-    animation: ap2-redraw 1.2s ease-in-out;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ap2-pillars path {
-    stroke-dashoffset: 0;
-  }
-
-  .ap2-pillars article:hover svg,
-  .ap2-pillars article:hover path {
-    animation: none;
-    transform: none;
-  }
+@keyframes ap2-spin {
+  from {transform: rotate(0);}
+  24%, to {transform: rotate(90deg);}
 }
 
 @keyframes ap2-sway {
-  25% {transform: rotate(-9deg);}
-  60% {transform: rotate(6deg);}
+  0%, 24%, 100% {transform: rotate(0);}
+  8% {transform: rotate(-9deg);}
+  16% {transform: rotate(6deg);}
 }
 
 @keyframes ap2-redraw {
   from {stroke-dashoffset: 1;}
-  to {stroke-dashoffset: 0;}
+  24%, to {stroke-dashoffset: 0;}
 }
 
 .ap2-pillars span {
@@ -348,7 +328,7 @@
 }
 
 .ap2-cta p {
-  font-size: clamp(1.8rem, 3.6vw, 5.3rem);
+  font-size: clamp(1.5rem, 2.5vw, 3.7rem);
   font-weight: 500;
   line-height: 1.15;
   margin: 0;
@@ -356,7 +336,7 @@
 
 .ap2-cta em {
   color: white;
-  font-size: clamp(1rem, 1.75vw, 2.6rem);
+  font-size: clamp(0.95rem, 1.3vw, 1.95rem);
   letter-spacing: 0.04em;
   margin-top: 0.5rem;
 }
