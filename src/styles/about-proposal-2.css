@@ -115,6 +115,15 @@
   padding-left: 3vw;
 }
 
+.ap2-hero-text p {
+  margin: 0;
+}
+
+.ap2-hero-text .ap2-hero-fact {
+  font-weight: 500;
+  margin-top: 0.75rem;
+}
+
 /* Essence */
 .ap2-essence {
   align-items: center;
