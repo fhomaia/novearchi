@@ -1,0 +1,38 @@
+.ap-mosaic {
+  aspect-ratio: 2 / 1;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  position: relative;
+}
+
+.ap-mosaic img {
+  cursor: pointer;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+  will-change: transform;
+  z-index: 1;
+}
+
+.ap-mosaic .ap-mosaic-main {
+  cursor: default;
+  grid-column: span 2;
+  grid-row: span 2;
+  z-index: 2;
+}
+
+@media (max-width: 991px) {
+  .ap-mosaic {
+    aspect-ratio: 1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 2fr 1fr;
+  }
+
+  .ap-mosaic .ap-mosaic-main {
+    grid-row: auto;
+  }
+}

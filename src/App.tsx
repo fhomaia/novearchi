@@ -6,7 +6,7 @@ import Partners from './components/Partners';
 import Services from './components/Services';
 import Highlights from './components/Highlights';
 import Main from './components/Main';
-import About from './components/About';
+import AboutProposalTwo from './components/AboutProposalTwo';
 import Headers from './components/Header';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
@@ -97,7 +97,7 @@ const App: React.FC = () => {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<AboutProposalTwo />} />
         </Route>
       </Routes>
     </Router>
